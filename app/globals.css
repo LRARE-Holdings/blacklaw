@@ -31,3 +31,37 @@ footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--hair);
 footer a { color: var(--ter); margin-right: 16px; font-size: 14px; }
 .cta { display: inline-block; background: var(--ink); color: var(--bg); padding: 14px 28px; border-radius: 12px; font-weight: 600; text-decoration: none; margin-top: 12px; }
 .fine { font-size: 13px; color: var(--ter); margin-top: 10px; }
+
+/* --- Landing presentation --- */
+.hero { display: flex; gap: 48px; align-items: center; flex-wrap: wrap; margin-bottom: 72px; }
+.heroCopy { flex: 1 1 320px; }
+.heroTitle { font-size: 44px; line-height: 1.1; margin: 6px 0 14px; }
+.heroSub { font-size: 18px; max-width: 46ch; }
+.phone {
+  flex: 0 0 260px; margin: 0 auto; background: var(--bg);
+  border: 6px solid var(--ink); border-radius: 36px; padding: 18px 14px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.10);
+}
+.phoneScreen { min-height: 380px; }
+.phoneEyebrow { font-size: 9px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--ter); margin-bottom: 2px; }
+.phoneTitle { font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.phoneRule { height: 1px; background: var(--hair); margin-bottom: 16px; }
+.ringRow { display: flex; gap: 14px; align-items: center; margin-bottom: 14px; }
+.ring { width: 110px; height: 110px; flex: none; }
+.ringNum { font-size: 26px; font-weight: 700; fill: var(--ink); }
+.ringLabel { font-size: 7px; letter-spacing: 1.4px; fill: var(--ter); }
+.pill { display: inline-block; font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 99px; }
+.pillGold { background: color-mix(in srgb, var(--gold1) 18%, var(--bg)); color: var(--gold2); }
+.phoneNote { font-size: 11px; color: var(--sub); margin-top: 6px; }
+.phoneCard { background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 12px; }
+.phoneCardTitle { font-size: 9px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ter); margin-bottom: 4px; }
+.phoneCardBody { font-size: 12px; color: var(--sub); margin: 0; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 72px; }
+.feature { background: var(--card); border: 1px solid var(--hair); border-radius: 16px; padding: 24px; }
+.feature h2 { margin: 12px 0 8px; font-size: 18px; }
+.feature p { font-size: 14.5px; margin: 0; }
+.featureRule { width: 28px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--gold1), var(--gold2)); }
+.closer { text-align: center; padding: 24px 0 8px; }
+.closerTitle { font-size: 30px; margin-bottom: 10px; }
+.closer p { max-width: 52ch; margin: 0 auto 16px; }
+@media (max-width: 640px) { .heroTitle { font-size: 34px; } .hero { gap: 28px; } }
