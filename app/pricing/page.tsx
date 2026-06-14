@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Reveal from "../../components/Reveal";
+import BetaButton from "../../components/BetaButton";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -37,7 +38,7 @@ export default function Pricing() {
                   <li><Tick /> Autopsy Mode and the daily companion</li>
                   <li><Tick /> Offline access</li>
                 </ul>
-                <a href="https://apps.apple.com/" className="btn btn--ghost" style={{ marginTop: 26, width: "100%", justifyContent: "center" }}>Choose Pro</a>
+                <BetaButton label="Choose Pro" variant="ghost" full style={{ marginTop: 26 }} />
               </div>
             </Reveal>
             <Reveal delay={0.1}>
@@ -53,7 +54,7 @@ export default function Pricing() {
                   <li><Tick /> AI marking against the published criteria</li>
                   <li><Tick /> Verdict 2 readiness across the blueprint</li>
                 </ul>
-                <a href="https://apps.apple.com/" className="btn btn--primary" style={{ marginTop: 26, width: "100%", justifyContent: "center" }}>Choose Complete</a>
+                <BetaButton label="Choose Complete" full style={{ marginTop: 26 }} />
               </div>
             </Reveal>
           </div>

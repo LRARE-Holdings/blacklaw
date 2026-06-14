@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Reveal from "../../components/Reveal";
+import BetaButton from "../../components/BetaButton";
 
 export const metadata: Metadata = {
   title: "About",
@@ -51,7 +52,7 @@ export default function About() {
             <div style={{ marginTop: 40 }}>
               <div className="gold-rule" style={{ marginBottom: 18 }} />
               <p className="h-md">Walk in knowing.</p>
-              <a href="/pricing" className="btn btn--primary" style={{ marginTop: 22 }}>Get Blacklaw <span className="btn-arrow">→</span></a>
+              <BetaButton label="Get Blacklaw" style={{ marginTop: 22 }} />
             </div>
           </Reveal>
         </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "../../components/Reveal";
 import PhoneShot from "../../components/PhoneShot";
+import BetaButton from "../../components/BetaButton";
 
 export const metadata: Metadata = {
   title: "SQE2 preparation",
@@ -74,7 +75,7 @@ export default function SQE2() {
               </p>
             </Reveal>
             <Reveal delay={0.24}>
-              <a href="/pricing" className="btn btn--primary" style={{ marginTop: 32 }}>Get Blacklaw Complete <span className="btn-arrow">→</span></a>
+              <BetaButton label="Get Blacklaw Complete" style={{ marginTop: 32 }} />
             </Reveal>
           </div>
           <Reveal delay={0.18} y={40}>

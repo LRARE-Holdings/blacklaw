@@ -1,6 +1,7 @@
 import Reveal from "../components/Reveal";
 import VerdictRing from "../components/VerdictRing";
 import PhoneShot from "../components/PhoneShot";
+import BetaButton from "../components/BetaButton";
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.26}>
               <div style={{ display: "flex", gap: 14, marginTop: 36, flexWrap: "wrap" }}>
-                <a href="/pricing" className="btn btn--primary">Get Blacklaw <span className="btn-arrow">→</span></a>
+                <BetaButton label="Get Blacklaw" />
                 <a href="/sqe2" className="btn btn--ghost">See SQE2</a>
               </div>
             </Reveal>
