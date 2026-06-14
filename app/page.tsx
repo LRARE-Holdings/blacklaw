@@ -1,104 +1,137 @@
+import Reveal from "../components/Reveal";
+import VerdictRing from "../components/VerdictRing";
+import PhoneShot from "../components/PhoneShot";
+
 export default function Home() {
   return (
     <>
-      <section className="hero">
-        <div className="heroCopy">
-          <p className="eyebrow">For SQE1 candidates</p>
-          <h1 className="heroTitle">Know you&apos;re ready.</h1>
-          <p className="heroSub">
-            A 1,200+ question bank across every FLK1 and FLK2 topic. Full timed
-            mock sittings under real exam conditions. And one number that tells
-            you where you actually stand.
-          </p>
-          <a className="cta" href="#">Download on the App Store</a>
-          <p className="fine">
-            The Verdict Score estimates exam readiness — a strong indicator,
-            not a guarantee of results.
-          </p>
-        </div>
-
-        <div className="phone" aria-hidden="true">
-          <div className="phoneScreen">
-            <p className="phoneEyebrow">Your readiness</p>
-            <p className="phoneTitle">Progress</p>
-            <div className="phoneRule" />
-            <div className="ringRow">
-              <svg className="ring" viewBox="0 0 120 120">
-                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--hair)" strokeWidth="10" />
-                <circle
-                  cx="60" cy="60" r="50" fill="none"
-                  stroke="url(#gold)" strokeWidth="10" strokeLinecap="round"
-                  strokeDasharray="226 314" transform="rotate(-90 60 60)"
-                />
-                <defs>
-                  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stopColor="var(--gold1)" />
-                    <stop offset="1" stopColor="var(--gold2)" />
-                  </linearGradient>
-                </defs>
-                <text x="60" y="58" textAnchor="middle" className="ringNum">72</text>
-                <text x="60" y="76" textAnchor="middle" className="ringLabel">VERDICT</text>
-              </svg>
-              <div>
-                <span className="pill pillGold">On Track</span>
-                <p className="phoneNote">Shore up your weakest topics next.</p>
+      {/* HERO */}
+      <section className="section hero section--ink-deep">
+        <div className="container hero-grid">
+          <div>
+            <Reveal delay={0.08}>
+              <h1 className="display" style={{ color: "var(--on-ink)" }}>
+                <span className="hero-tag">Walk in</span>
+                <span className="hero-tag hero-gold">knowing.</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={0.18}>
+              <p className="lede" style={{ marginTop: 26, maxWidth: "38ch" }}>
+                Exam-grade practice, a readiness score that tells you the truth, and
+                SQE2 preparation that works like the real assessment. The whole qualification, one place.
+              </p>
+            </Reveal>
+            <Reveal delay={0.26}>
+              <div style={{ display: "flex", gap: 14, marginTop: 36, flexWrap: "wrap" }}>
+                <a href="/pricing" className="btn btn--primary">Get Blacklaw <span className="btn-arrow">→</span></a>
+                <a href="/sqe2" className="btn btn--ghost">See SQE2</a>
               </div>
+            </Reveal>
+          </div>
+          <Reveal delay={0.2} y={40}>
+            <div className="device-duo">
+              <PhoneShot src="/shots/home.png" alt="The Blacklaw home screen showing a Verdict readiness score" priority />
+              <PhoneShot src="/shots/progress.png" alt="The Blacklaw progress screen with a 30-day Verdict trend" />
             </div>
-            <div className="phoneCard">
-              <p className="phoneCardTitle">Today&apos;s brief</p>
-              <p className="phoneCardBody">6 weeks out — 34 min today: focus on Trusts, protect 12 fading answers.</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* PROOF STRIP */}
+      <section className="section section--tint" style={{ paddingTop: 64, paddingBottom: 64 }}>
+        <div className="container">
+          <Reveal>
+            <div className="kpis" style={{ justifyContent: "space-between" }}>
+              <div><div className="kpi-num">1,250<span className="gold">+</span></div><div className="kpi-label">Exam-standard questions</div></div>
+              <div><div className="kpi-num">90<span className="gold">/</span>153</div><div className="kpi-label">Full mock sitting, to the minute</div></div>
+              <div><div className="kpi-num">SQE1 <span className="gold">+</span> 2</div><div className="kpi-label">The whole qualification</div></div>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* THE VERDICT */}
+      <section className="section">
+        <div className="container hero-grid">
+          <Reveal>
+            <div>
+              <h2 className="h-xl" style={{ marginTop: 14 }}>One number,<br />honestly earned.</h2>
+              <p className="lede" style={{ marginTop: 22, maxWidth: "42ch", color: "var(--sub)" }}>
+                Every answer feeds a single readiness score, from 0 to 100. It weighs how
+                firmly you hold each topic, how much of the syllabus you have covered, what
+                the forgetting curve says you are about to lose, and how consistently you work.
+              </p>
+              <p className="disclaimer" style={{ marginTop: 18 }}>
+                An indicator of readiness, not a prediction of results.
+              </p>
+              <a href="/features" className="btn btn--ghost" style={{ marginTop: 28 }}>How it works <span className="btn-arrow">→</span></a>
+            </div>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="card" style={{ padding: "48px 30px", textAlign: "center" }}>
+              <VerdictRing value={72} size={240} onInk={false} />
+              <div style={{ marginTop: 18 }} className="muted">On track · Established</div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* FEATURE TRIO */}
+      <section className="section section--tint">
+        <div className="container">
+          <Reveal delay={0.06}><h2 className="h-lg center mx-auto" style={{ marginTop: 12, marginBottom: 48, maxWidth: "18ch" }}>Practice that respects how the SQE actually works.</h2></Reveal>
+          <div className="grid grid-3">
+            {[
+              { t: "Exam Day Simulation", d: "Ninety questions in 153 minutes, no feedback until the paper closes. The real sitting, then a breakdown of every mark." },
+              { t: "Autopsy Mode", d: "Each question you miss is taken apart: why the right answer is right, why yours was not, and the principle between them." },
+              { t: "A daily companion", d: "A brief built from what you are forgetting, calibration of confidence against accuracy, and recall rescue before knowledge fades." },
+            ].map((f, i) => (
+              <Reveal key={f.t} delay={i * 0.08}>
+                <div className="card feature" style={{ height: "100%" }}>
+                  <div className="feature-icon" aria-hidden>◆</div>
+                  <h3>{f.t}</h3>
+                  <p>{f.d}</p>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="features">
-        <div className="feature">
-          <div className="featureRule" />
-          <h2>The Verdict Score</h2>
-          <p>
-            One number from four signals — mastery, syllabus coverage, predicted
-            retention, and momentum — shrunk toward caution on thin evidence and
-            dampened by your weakest topic, because SQE1 requires passing both
-            papers.
-          </p>
-        </div>
-        <div className="feature">
-          <div className="featureRule" />
-          <h2>Exam Day Simulation</h2>
-          <p>
-            The real block: 90 questions, 2h33m, flag-and-return navigation, and
-            no feedback until the paper is over. Then a debrief on score, pace,
-            and exactly where the marks went.
-          </p>
-        </div>
-        <div className="feature">
-          <div className="featureRule" />
-          <h2>A plan, every day</h2>
-          <p>
-            A daily brief sized to your hours and exam date: new coverage, spaced
-            review, and rescue sessions for answers about to fade — built from a
-            real forgetting curve, not a content calendar.
-          </p>
-        </div>
-        <div className="feature">
-          <div className="featureRule" />
-          <h2>Honest calibration</h2>
-          <p>
-            You rate your confidence on every answer. We show you where
-            confidence and results disagree — the difference between flagging an
-            answer to revisit and second-guessing one you had right.
-          </p>
+      {/* SQE2 SHOWCASE */}
+      <section className="section section--ink-deep">
+        <div className="container hero-grid">
+          <Reveal y={40}>
+            <PhoneShot src="/shots/sqe2.png" alt="The Blacklaw SQE2 station hub with a readiness matrix" width={300} />
+          </Reveal>
+          <Reveal delay={0.12}>
+            <div>
+              <h2 className="h-xl" style={{ marginTop: 16, color: "var(--on-ink)" }}>SQE2, as it is<br />actually sat.</h2>
+              <p className="lede" style={{ marginTop: 22, maxWidth: "40ch" }}>
+                The practical half of the qualification, recreated as it is actually sat.
+                Assessed stations in the genuine format. A live client you interview by
+                voice. Every answer marked against the published criteria, in seconds.
+              </p>
+              <a href="/sqe2" className="btn btn--primary" style={{ marginTop: 30 }}>Explore SQE2 <span className="btn-arrow">→</span></a>
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="closer">
-        <h2 className="closerTitle">Calm by design.</h2>
-        <p>
-          Built for the two-hour evening session and the final twelve weeks. No
-          streak circus, no confetti — one gold ring that fills as you earn it.
-        </p>
-        <a className="cta" href="#">Download on the App Store</a>
+      {/* CLOSER */}
+      <section className="section center">
+        <div className="container">
+          <Reveal><div className="gold-rule mx-auto" style={{ marginBottom: 28 }} /></Reveal>
+          <Reveal delay={0.06}><h2 className="display" style={{ fontSize: "clamp(40px, 7vw, 84px)" }}>Walk in knowing.</h2></Reveal>
+          <Reveal delay={0.14}>
+            <p className="lede mx-auto" style={{ marginTop: 22, maxWidth: "34ch" }}>
+              Pro covers SQE1 in full. Complete adds the SQE2 track. Both on the App Store.
+            </p>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <a href="/pricing" className="btn btn--primary" style={{ marginTop: 32 }}>See plans <span className="btn-arrow">→</span></a>
+          </Reveal>
+        </div>
       </section>
     </>
   );
