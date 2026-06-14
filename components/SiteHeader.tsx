@@ -14,6 +14,7 @@ const DARK_HERO = new Set(["/", "/sqe2"]);
 export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [betaTip, setBetaTip] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -34,7 +35,23 @@ export default function SiteHeader() {
           {NAV.map((n) => (
             <a key={n.href} href={n.href} onClick={() => setOpen(false)}>{n.label}</a>
           ))}
-          <a href="/pricing" className="hdr-cta" onClick={() => setOpen(false)}>Get Blacklaw</a>
+          <span
+            className="hdr-cta-wrap"
+            onMouseEnter={() => setBetaTip(true)}
+            onMouseLeave={() => setBetaTip(false)}
+          >
+            <button
+              type="button"
+              className="hdr-cta hdr-cta--soon"
+              aria-disabled="true"
+              onClick={() => setBetaTip((v) => !v)}
+            >
+              Get Blacklaw
+            </button>
+            <span className={`hdr-cta-tip${betaTip ? " show" : ""}`} role="status">
+              Beta access opens 19 June
+            </span>
+          </span>
         </nav>
         <button
           className="hdr-burger"
