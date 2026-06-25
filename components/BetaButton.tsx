@@ -1,5 +1,5 @@
-"use client";
-import { useState, type CSSProperties } from "react";
+import { type CSSProperties } from "react";
+import { BETA_URL } from "../lib/links";
 
 type Props = {
   label: string;
@@ -8,28 +8,17 @@ type Props = {
   style?: CSSProperties;
 };
 
-/** Pre-launch purchase CTA: looks like a real button, does not navigate, and
-    reveals the beta date on hover (desktop) or tap (touch). */
+/** Purchase CTA — links to the public TestFlight beta. */
 export default function BetaButton({ label, variant = "primary", full = false, style }: Props) {
-  const [tip, setTip] = useState(false);
   return (
-    <span
-      className={`beta-wrap${full ? " beta-wrap--full" : ""}`}
+    <a
+      href={BETA_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`btn btn--${variant}${full ? " btn--full" : ""}`}
       style={style}
-      onMouseEnter={() => setTip(true)}
-      onMouseLeave={() => setTip(false)}
     >
-      <button
-        type="button"
-        className={`btn btn--${variant} beta-btn`}
-        aria-disabled="true"
-        onClick={() => setTip((v) => !v)}
-      >
-        {label}
-      </button>
-      <span className={`beta-tip${tip ? " show" : ""}`} role="status">
-        Beta access opens 19 June
-      </span>
-    </span>
+      {label}
+    </a>
   );
 }

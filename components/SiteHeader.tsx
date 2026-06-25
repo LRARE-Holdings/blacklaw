@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { BETA_URL } from "../lib/links";
 
 const NAV = [
   { href: "/sqe2", label: "SQE2" },
@@ -14,7 +15,6 @@ const DARK_HERO = new Set(["/", "/sqe2"]);
 export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [betaTip, setBetaTip] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -35,23 +35,15 @@ export default function SiteHeader() {
           {NAV.map((n) => (
             <a key={n.href} href={n.href} onClick={() => setOpen(false)}>{n.label}</a>
           ))}
-          <span
-            className="hdr-cta-wrap"
-            onMouseEnter={() => setBetaTip(true)}
-            onMouseLeave={() => setBetaTip(false)}
+          <a
+            href={BETA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hdr-cta"
+            onClick={() => setOpen(false)}
           >
-            <button
-              type="button"
-              className="hdr-cta hdr-cta--soon"
-              aria-disabled="true"
-              onClick={() => setBetaTip((v) => !v)}
-            >
-              Get Blacklaw
-            </button>
-            <span className={`hdr-cta-tip${betaTip ? " show" : ""}`} role="status">
-              Beta access opens 19 June
-            </span>
-          </span>
+            Get Blacklaw
+          </a>
         </nav>
         <button
           className="hdr-burger"
