@@ -69,7 +69,7 @@ export default function Features() {
             {[
               { t: "Autopsy Mode", d: "Every missed question taken apart: the correct answer, your answer, and the principle that decides between them. Understanding, not just the key." },
               { t: "A study companion", d: "A daily brief from what you are forgetting, confidence calibrated against accuracy, recall rescue before knowledge fades, and reminders on your schedule." },
-              { t: "The full question bank", d: "Over 1,250 single-best-answer questions across FLK1 and FLK2, written to the style and standard of the assessment, every one explained." },
+              { t: "The full question bank", d: "Over 2,000 single-best-answer questions across FLK1 and FLK2, written to the style and standard of the assessment, every one explained." },
               { t: "Offline and yours", d: "The whole bank works offline. Your data stays yours; nothing is sold, and you are not tracked across other apps." },
             ].map((f, i) => (
               <Reveal key={f.t} delay={(i % 2) * 0.08}>

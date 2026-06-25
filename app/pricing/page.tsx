@@ -32,7 +32,7 @@ export default function Pricing() {
                 <div className="price-amt">SQE1<span> · in full</span></div>
                 <p className="muted" style={{ fontSize: 15 }}>Everything you need for the first stage.</p>
                 <ul className="price-list">
-                  <li><Tick /> 1,250+ exam-standard questions</li>
+                  <li><Tick /> 2,000+ exam-standard questions</li>
                   <li><Tick /> Full Exam Day Simulation</li>
                   <li><Tick /> The Verdict readiness score</li>
                   <li><Tick /> Autopsy Mode and the daily companion</li>

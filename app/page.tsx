@@ -43,7 +43,7 @@ export default function Home() {
         <div className="container">
           <Reveal>
             <div className="kpis" style={{ justifyContent: "space-between" }}>
-              <div><div className="kpi-num">1,250<span className="gold">+</span></div><div className="kpi-label">Exam-standard questions</div></div>
+              <div><div className="kpi-num">2,000<span className="gold">+</span></div><div className="kpi-label">Exam-standard questions</div></div>
               <div><div className="kpi-num">90<span className="gold">/</span>153</div><div className="kpi-label">Full mock sitting, to the minute</div></div>
               <div><div className="kpi-num">SQE1 <span className="gold">+</span> 2</div><div className="kpi-label">The whole qualification</div></div>
             </div>
